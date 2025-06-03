@@ -61,7 +61,23 @@ class SecurityCamera implements Switchable,VideoRecordable{
         System.out.println("Security Camera is recording video");
     }
 }
-class Electronics {
+class SmartPhone implements Switchable, Chargable {
+    @Override
+    public void turnOn() {
+        System.out.println("Smartphone is turned on");
+    }
+
+    @Override
+    public void turnOff() {
+        System.out.println("Smartphone is turned off");
+    }
+
+    @Override
+    public void charge() {
+        System.out.println("Smartphone is charging");
+    }
+}
+class InterfaceSegregation {
     public static void main(String[] args) {
         Light light = new Light();
         light.turnOn();
@@ -77,5 +93,12 @@ class Electronics {
         camera.turnOn();
         camera.recordVideo();
         camera.turnOff();
+
+        SmartPhone phone = new SmartPhone();
+        phone.turnOn();
+        phone.charge();
+        phone.turnOff();
+        
+
     }
 }
